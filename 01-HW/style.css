@@ -33,6 +33,7 @@ body {
 
 .calc__operation-option {
   font-size: 24px;
+  color: #000;
 }
 
 .calc__button {
