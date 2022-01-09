@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(233, 226, 226, 0.6);
+}
+
+.form-control {
+  text-align: center;
+}
+
+.form__input {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.form__label {
+  font-size: 18px;
+}
+
+.form__btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+input.form__input--danger {
+  border: 1px solid red;
+  box-shadow: 0 1px 10px red;
+}
+
+input.form__input--danger:focus {
+  border: 1px solid #bdbdbd;
+  box-shadow: 0 1px 10px #bdbdbd;
+}
