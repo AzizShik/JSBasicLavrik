@@ -1,22 +1,38 @@
-const inputEl = document.querySelectorAll('.form__input');
-const btnEl = document.querySelector('.form__btn');
-const formEl = document.querySelector('.form');
+window.addEventListener('load', () => {
+  const inputEl = document.querySelectorAll('.form__input');
+  const btnEl = document.querySelector('.form__btn');
+  const formEl = document.querySelector('.form');
 
-formEl.addEventListener('submit', submitHandler);
-formEl.addEventListener('input', formHandler);
+  let patterns = {
+    notEmpty: /.+/,
+    phone: /^\d{7,14}$/,
+    email: /^.+@.+\..+$/,
+  };
 
-function submitHandler(e) {
-  e.preventDefault();
-  inputEl.forEach(input => {
-    if(input.value === '' || input.value === ' ') {
-      input.classList.add('form__input--danger');
-    } else {
-      input.value = '';
-      return true;
-    }
-  });
-}
+  formEl.addEventListener('submit', submitHandler);
+  formEl.addEventListener('input', formHandler);
 
-function formHandler(e) {
-  e.target.classList.remove('form__input--danger');
-}
+  function submitHandler(e) {
+    inputEl.forEach(input => {
+      let pattern = patterns[input.dataset.valid];
+      input.value = input.value.trim();
+      if (!pattern.test(input.value)) {
+        e.preventDefault();
+        input.classList.add('form__input--danger');
+      }
+    });
+  }
+
+  function formHandler(e) {
+    e.target.classList.remove('form__input--danger');
+  }
+
+
+
+
+
+
+
+
+
+});

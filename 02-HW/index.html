@@ -16,15 +16,15 @@
     <form class="form">
       <div class="form-control">
         <label for="name" class="form__label">Имя</label>
-        <input type="text" class="form__input" id="name" name="name">
+        <input type="text" class="form__input" id="name" name="name" data-valid="notEmpty">
       </div>
       <div class="form-control">
         <label for="" class="form__label">Телефон</label>
-        <input type="text" class="form__input " id="phone" name="phone">
+        <input type="text" class="form__input " id="phone" name="phone" data-valid="phone">
       </div>
       <div class="form-control">
         <label for="" class="form__label">Почта</label>
-        <input type="text" class="form__input" id="mail" name="mail">
+        <input type="text" class="form__input" id="mail" name="email" data-valid="email">
       </div>
       <button type="submit" class="button-primary button-round button-shadow form__btn">Отправить</button>
     </form>
