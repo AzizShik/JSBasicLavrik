@@ -30,7 +30,6 @@ nav {
   align-items: center;
   width: 64px;
   height: 64px;
-  pointer-events: inherit;
 }
 
 .up__button {
@@ -47,12 +46,11 @@ nav {
 }
 
 .container {
-  padding: 0 10px;
+  padding: 0;
 }
 
 .hide {
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
 }
 

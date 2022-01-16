@@ -10,8 +10,7 @@ window.addEventListener('load', () => {
   });
 
   function onScroll() {
-    console.log('111');
-    
+
     if (window.pageYOffset >= window.innerHeight) {
       upEl.classList.remove('hide');
     } else {
