@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  background-color: rgba(187, 187, 187, 0.6);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.faq {
+  margin-top: 50px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.faq__item {
+  margin-bottom: 20px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.faq__item-quest {
+  max-width: 200px;
+  padding: 5px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.faq__item-answer {
+  font-size: 18px;
+  display: none;
+}
+
+.faq__item-answer--active {
+  display: block;
+  animation: questAnim .5s ease forwards;
+}
+
+@keyframes questAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
