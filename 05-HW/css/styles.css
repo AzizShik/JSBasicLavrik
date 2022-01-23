@@ -1,0 +1,57 @@
+html,
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #8bc6ec;
+}
+
+.gallery {
+  width: 860px;
+  margin: 0 auto;
+	margin-top: 50px;
+  text-align: center;
+}
+
+.gallery .photos {
+  position: relative;
+  height: 670px;
+}
+
+.gallery .photos img {
+	border-radius: 4px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.gallery .photos img.showed {
+  opacity: 1;
+}
+
+
+.btn {
+	margin: 10px;
+	background: #F7CE68;
+	color: #fff;
+	padding: 12px 24px;
+	border-radius: 10px;
+	font-size: 16px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.btn:hover {
+	opacity: .8;
+}
+
+.btn:active {
+	opacity: .6;
+}
