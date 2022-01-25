@@ -28,7 +28,7 @@ body {
   position: absolute;
   left: 0;
   opacity: 0;
-  transition: opacity 1s;
+  transition: all 0.5s linear;
 }
 
 .gallery .photos img.showed {

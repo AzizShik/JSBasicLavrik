@@ -9,37 +9,50 @@ window.addEventListener('load', function () {
 			this.btnNext = this.selector.querySelector('.next');
 			this.images = this.selector.querySelectorAll('.photos img');
 			this.i = 0;
+			this.animated = false;
 
 			this.btnNext.addEventListener('click', () => {
-				clearInterval(inverval);
 				this.next();
 			});
 
 			this.btnPrev.addEventListener('click', () => {
-				clearInterval(inverval);
 				this.prev();
 			});
 
 		}
 
 		next() {
-			this.images[this.i].classList.remove('showed');
-			this.i++;
-			if (this.i >= this.images.length) {
-				this.i = 0;
+			if (!this.animated) {
+				let imgHide = this.images[this.i];
+				this.i >= this.images.length - 1 ? this.i = 0 : this.i++;
+				this.toggleSlide(imgHide, this.images[this.i], 'next')
 			}
-			this.images[this.i].classList.add('showed');
-			console.log(this.images, this.i);
 		}
 
 		prev() {
-			this.images[this.i].classList.remove('showed');
-			this.i--;
-			if (this.i < 0) {
-				this.i = this.images.length - 1;
+			if (!this.animated) {
+				let imgHide = this.images[this.i];
+				this.i <= 0 ? this.i = this.images.length - 1 : this.i--;
+				this.toggleSlide(imgHide, this.images[this.i], 'prev')
 			}
-			this.images[this.i].classList.add('showed');
-			console.log(this.images, this.i);
+		}
+
+		toggleSlide(imgHide, showImg, direction) {
+			this.animated = true;
+			let animate = imgHide.animate([{
+				transform: direction === 'prev' ? 'translateX(25%)' : 'translateX(-25%)',
+				borderRadius: '25%'
+			}, {
+				transform: 'translateX(0%)',
+				borderRadius: '10px'
+			}], {
+				duration: 500,
+			})
+			animate.addEventListener('finish', () => {
+				imgHide.classList.remove('showed');
+				this.animated = false;
+			});
+			showImg.classList.add('showed');
 		}
 
 	}
@@ -47,7 +60,6 @@ window.addEventListener('load', function () {
 
 	const slider = new Slider('.gallery-1');
 	const slider2 = new Slider('.gallery-2');
-
 
 
 
