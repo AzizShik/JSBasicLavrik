@@ -7,3 +7,4 @@
 05-HW: https://azizshik.github.io/JSBasicLavrik/05-HW/
 06-HW: https://azizshik.github.io/JSBasicLavrik/06-HW/
 07-HW: https://azizshik.github.io/JSBasicLavrik/07-HW/
+08-HW: https://azizshik.github.io/JSBasicLavrik/08-HW/
